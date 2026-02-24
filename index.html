@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ตรวจสอบประวัติ - ระบบตรวจสอบจังหวัด</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">ตรวจสอบประวัติ</div>
+            <div class="tagline">ระบบตรวจสอบประวัติการเดินทาง / จังหวัด (สำหรับสมาชิก)</div>
+        </header>
+
+        <main class="main-content">
+            <section class="input-section">
+                <div class="input-group">
+                    <label for="nameInput" class="input-label">
+                        <i class="fas fa-user-check"></i> กรุณาใส่ชื่อเพื่อตรวจสอบ
+                    </label>
+                    <input type="text" id="nameInput" class="name-input" placeholder="ระบุชื่อของคุณ..." autocomplete="off">
+                </div>
+
+                <div class="buttons">
+                    <button id="checkBtn" class="btn btn-primary">
+                        <i class="fas fa-search"></i> ตรวจสอบประวัติ
+                    </button>
+                    <button id="resetBtn" class="btn btn-secondary">
+                        <i class="fas fa-redo"></i> ล้างข้อมูล
+                    </button>
+                </div>
+            </section>
+
+            <section id="resultSection" class="result-section">
+                <div class="result-header">
+                    <i class="fas fa-history"></i> ผลการตรวจสอบประวัติ
+                </div>
+
+                <div class="user-info">
+                    <p>ชื่อผู้ตรวจสอบ: <strong id="userNameDisplay"></strong></p>
+                </div>
+
+                <div class="province-display" id="provinceDisplay">
+                    กรุณากดปุ่ม "ตรวจสอบประวัติ"
+                </div>
+
+                <div class="hidden-code" id="hiddenCode">****************</div>
+                <div class="code-reveal" id="codeReveal">
+                    รหัสตรวจสอบจะถูกเปิดเผยเมื่อครบ 10 นาที
+                </div>
+
+                <div class="timer-section">
+                    <div class="timer">
+                        <i class="fas fa-clock"></i>
+                        <span>เวลาที่เหลือในการตรวจสอบซ้ำ:</span>
+                        <span class="timer-value" id="timerValue">10:00</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <p class="code-reveal">รหัสตรวจสอบจะเปลี่ยนใหม่เมื่อเวลาหมด</p>
+                </div>
+            </section>
+
+            <section class="history-section">
+                <div class="history-title">
+                    <i class="fas fa-history"></i> ประวัติการตรวจสอบล่าสุด
+                </div>
+                <ul class="history-list" id="historyList"></ul>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>ระบบตรวจสอบประวัติ © 2026 ตรวจสอบประวัติ - สำหรับใช้ภายในองค์กรเท่านั้น</p>
+            <p>ผลตรวจสอบจะคงที่ 24 ชั่วโมง / รหัสตรวจสอบเปลี่ยนทุก 10 นาที</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
